@@ -15,6 +15,7 @@ hermes -c config.toml keys add chain-d -f chain/d/key_seed.json
    ```
 
 ## multiple Chain (Concurrent packet relaying on multiple paths)
+WARNING: Relaying packets concurrently over multiple channels with the start-multi command is currently experimental. Use at your own risk.
 Caveat: At the moment, start-multi does not clear pending packets when starting. It is therefore advised to only use it for channels which do not have pending packets.
 
    ```shell
@@ -52,23 +53,13 @@ hermes -c config.toml query channel end chain-d transfer channel-0
 
 
 ## Strange operation(send token)
-   ```shell
-In all queries below, it appears that there is no chain-dependent channel filtering.
+
+In transfer below, it appears that there is no chain-dependent channel filtering.
 The actual amount at A disappeared, but the amount did not come in from the C chain.
 Configuration that should not be relayed, but currently seems to be relayable
 
-hermes -c config.toml tx raw ft-transfer chain-c chain-a transfer channel-0 9999 1000 -n 1 -d stake ?? strange
-
-hermes -c config.toml tx raw ft-transfer chain-b chain-a transfer channel-0 9999 1000 -n 1 -d stake
-hermes -c config.toml tx raw ft-transfer chain-c chain-a transfer channel-1 9999 1000 -n 1 -d stake
-hermes -c config.toml tx raw ft-transfer chain-d chain-a transfer channel-2 9999 1000 -n 1 -d stake
-
-hermes -c config.toml tx raw ft-transfer chain-a chain-b transfer channel-0 9999 1000 -n 1 -d atom
-hermes -c config.toml tx raw ft-transfer chain-a chain-c transfer channel-0 9999 1000 -n 1 -d iris
-hermes -c config.toml tx raw ft-transfer chain-a chain-d transfer channel-0 9999 1000 -n 1 -d test
-
-hermes -c config.toml tx raw ft-transfer chain-b chain-c transfer channel-1 9999 1000 -n 1 -d iris
-hermes -c config.toml tx raw ft-transfer chain-c chain-d transfer channel-1 9999 1000 -n 1 -d test
+   ```shell
+hermes -c config.toml tx raw ft-transfer chain-c chain-a transfer channel-0 9999 1000 -n 1 -d stake
    ```
 ## Strange operation(query)
 
