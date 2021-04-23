@@ -1,0 +1,114 @@
+[global]
+strategy = 'naive'
+log_level = 'info'
+
+[[chains]]
+id = 'chain-a'
+rpc_addr = 'http://127.0.0.1:16657'
+grpc_addr = 'http://127.0.0.1:1090'
+websocket_addr = 'ws://localhost:16657/websocket'
+rpc_timeout = '10s'
+account_prefix = 'cosmos'
+key_name = 'akey'
+store_prefix = 'ibc'
+gas = 200000
+fee_denom = 'stake'
+fee_amount = 10
+clock_drift = '5s'
+trusting_period = '14days'
+
+[chains.trust_threshold]
+numerator = '1'
+denominator = '3'
+
+[[chains]]
+id = 'chain-b'
+rpc_addr = 'http://127.0.0.1:26657'
+grpc_addr = 'http://127.0.0.1:9090'
+websocket_addr = 'ws://localhost:26657/websocket'
+rpc_timeout = '10s'
+account_prefix = 'cosmos'
+key_name = 'bkey'
+store_prefix = 'ibc'
+gas = 200000
+fee_denom = 'atom'
+fee_amount = 10
+clock_drift = '5s'
+trusting_period = '14days'
+
+[chains.trust_threshold]
+numerator = '1'
+denominator = '3'
+
+[[chains]]
+id = 'chain-c'
+rpc_addr = 'http://127.0.0.1:36657'
+grpc_addr = 'http://127.0.0.1:3090'
+websocket_addr = 'ws://localhost:36657/websocket'
+rpc_timeout = '10s'
+account_prefix = 'cosmos'
+key_name = 'ckey'
+store_prefix = 'ibc'
+gas = 200000
+fee_denom = 'iris'
+fee_amount = 10
+clock_drift = '5s'
+trusting_period = '14days'
+
+[chains.trust_threshold]
+numerator = '1'
+denominator = '3'
+
+[[chains]]
+id = 'chain-d'
+rpc_addr = 'http://127.0.0.1:46657'
+grpc_addr = 'http://127.0.0.1:4090'
+websocket_addr = 'ws://localhost:46657/websocket'
+rpc_timeout = '10s'
+account_prefix = 'cosmos'
+key_name = 'dkey'
+store_prefix = 'ibc'
+gas = 200000
+fee_denom = 'test'
+fee_amount = 10
+clock_drift = '5s'
+trusting_period = '14days'
+
+[chains.trust_threshold]
+numerator = '1'
+denominator = '3'
+
+
+[[connections]]
+a_chain = 'chain-a'
+b_chain = 'chain-b'
+
+[[connections.paths]]
+a_port = 'transfer'
+b_port = 'transfer'
+
+[[connections]]
+a_chain = 'chain-a'
+b_chain = 'chain-c'
+
+[[connections.paths]]
+a_port = 'transfer'
+b_port = 'transfer'
+
+
+[[connections]]
+a_chain = 'chain-a'
+b_chain = 'chain-d'
+
+[[connections.paths]]
+a_port = 'transfer'
+b_port = 'transfer'
+
+
+[[connections]]
+a_chain = 'chain-b'
+b_chain = 'chain-c'
+
+[[connections.paths]]
+a_port = 'transfer'
+b_port = 'transfer'
