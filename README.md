@@ -1,4 +1,10 @@
 # hermes-rly-test
+It was tested in a backend daemon environment for about a day.(Not dying)
+
+We found some problems with the transfer and query section, but it is not fatal.
+
+Also, the ability to link chains using raw transactions worked perfectly.
+
 ## Gaia setting
    ```shell
 gaiad start --home chain/a/
