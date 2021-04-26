@@ -1,0 +1,269 @@
+[global]
+strategy = 'naive'
+log_level = 'info'
+
+[[chains]]
+id = 'chain-a'
+rpc_addr = 'http://127.0.0.1:16657'
+grpc_addr = 'http://127.0.0.1:1090'
+websocket_addr = 'ws://localhost:16657/websocket'
+rpc_timeout = '10s'
+account_prefix = 'cosmos'
+key_name = 'akey'
+store_prefix = 'ibc'
+gas = 100000000
+fee_denom = 'stake'
+fee_amount = 0
+clock_drift = '5s'
+trusting_period = '14days'
+
+[chains.trust_threshold]
+numerator = '1'
+denominator = '3'
+
+[[chains]]
+id = 'chain-b'
+rpc_addr = 'http://127.0.0.1:26657'
+grpc_addr = 'http://127.0.0.1:2090'
+websocket_addr = 'ws://localhost:26657/websocket'
+rpc_timeout = '10s'
+account_prefix = 'cosmos'
+key_name = 'bkey'
+store_prefix = 'ibc'
+gas = 100000000
+fee_denom = 'atom'
+fee_amount = 0
+clock_drift = '5s'
+trusting_period = '14days'
+
+[chains.trust_threshold]
+numerator = '1'
+denominator = '3'
+
+[[chains]]
+id = 'chain-c'
+rpc_addr = 'http://127.0.0.1:36657'
+grpc_addr = 'http://127.0.0.1:3090'
+websocket_addr = 'ws://localhost:36657/websocket'
+rpc_timeout = '10s'
+account_prefix = 'cosmos'
+key_name = 'ckey'
+store_prefix = 'ibc'
+gas = 100000000
+fee_denom = 'iris'
+fee_amount = 0
+clock_drift = '5s'
+trusting_period = '14days'
+
+[chains.trust_threshold]
+numerator = '1'
+denominator = '3'
+
+[[chains]]
+id = 'chain-d'
+rpc_addr = 'http://127.0.0.1:46657'
+grpc_addr = 'http://127.0.0.1:4090'
+websocket_addr = 'ws://localhost:46657/websocket'
+rpc_timeout = '10s'
+account_prefix = 'cosmos'
+key_name = 'dkey'
+store_prefix = 'ibc'
+gas = 100000000
+fee_denom = 'test'
+fee_amount = 0
+clock_drift = '5s'
+trusting_period = '14days'
+
+[chains.trust_threshold]
+numerator = '1'
+denominator = '3'
+
+[[chains]]
+id = 'chain-e'
+rpc_addr = 'http://127.0.0.1:26557'
+grpc_addr = 'http://127.0.0.1:5090'
+websocket_addr = 'ws://localhost:26557/websocket'
+rpc_timeout = '10s'
+account_prefix = 'cosmos'
+key_name = 'ekey'
+store_prefix = 'ibc'
+gas = 100000000
+fee_denom = 'stake'
+fee_amount = 0
+clock_drift = '5s'
+trusting_period = '14days'
+
+[chains.trust_threshold]
+numerator = '1'
+denominator = '3'
+
+[[chains]]
+id = 'chain-f'
+rpc_addr = 'http://127.0.0.1:11157'
+grpc_addr = 'http://127.0.0.1:6090'
+websocket_addr = 'ws://localhost:11157/websocket'
+rpc_timeout = '10s'
+account_prefix = 'cosmos'
+key_name = 'fkey'
+store_prefix = 'ibc'
+gas = 100000000
+fee_denom = 'stake'
+fee_amount = 0
+clock_drift = '5s'
+trusting_period = '14days'
+
+[chains.trust_threshold]
+numerator = '1'
+denominator = '3'
+
+[[chains]]
+id = 'chain-g'
+rpc_addr = 'http://127.0.0.1:26757'
+grpc_addr = 'http://127.0.0.1:7090'
+websocket_addr = 'ws://localhost:26757/websocket'
+rpc_timeout = '10s'
+account_prefix = 'cosmos'
+key_name = 'gkey'
+store_prefix = 'ibc'
+gas = 100000000
+fee_denom = 'stake'
+fee_amount = 0
+clock_drift = '5s'
+trusting_period = '14days'
+
+[chains.trust_threshold]
+numerator = '1'
+denominator = '3'
+
+[[chains]]
+id = 'chain-h'
+rpc_addr = 'http://127.0.0.1:26857'
+grpc_addr = 'http://127.0.0.1:8090'
+websocket_addr = 'ws://localhost:26857/websocket'
+rpc_timeout = '10s'
+account_prefix = 'cosmos'
+key_name = 'hkey'
+store_prefix = 'ibc'
+gas = 100000000
+fee_denom = 'stake'
+fee_amount = 0
+clock_drift = '5s'
+trusting_period = '14days'
+
+[chains.trust_threshold]
+numerator = '1'
+denominator = '3'
+
+[[chains]]
+id = 'chain-i'
+rpc_addr = 'http://127.0.0.1:26957'
+grpc_addr = 'http://127.0.0.1:9090'
+websocket_addr = 'ws://localhost:26957/websocket'
+rpc_timeout = '10s'
+account_prefix = 'cosmos'
+key_name = 'ikey'
+store_prefix = 'ibc'
+gas = 100000000
+fee_denom = 'stake'
+fee_amount = 0
+clock_drift = '5s'
+trusting_period = '14days'
+
+[chains.trust_threshold]
+numerator = '1'
+denominator = '3'
+
+[[chains]]
+id = 'chain-j'
+rpc_addr = 'http://127.0.0.1:27057'
+grpc_addr = 'http://127.0.0.1:1190'
+websocket_addr = 'ws://localhost:27057/websocket'
+rpc_timeout = '10s'
+account_prefix = 'cosmos'
+key_name = 'jkey'
+store_prefix = 'ibc'
+gas = 100000000
+fee_denom = 'stake'
+fee_amount = 0
+clock_drift = '5s'
+trusting_period = '14days'
+
+[chains.trust_threshold]
+numerator = '1'
+denominator = '3'
+
+
+[[connections]]
+a_chain = 'chain-a'
+b_chain = 'chain-b'
+
+[[connections.paths]]
+a_port = 'transfer'
+b_port = 'transfer'
+
+[[connections]]
+a_chain = 'chain-a'
+b_chain = 'chain-c'
+
+[[connections.paths]]
+a_port = 'transfer'
+b_port = 'transfer'
+
+
+[[connections]]
+a_chain = 'chain-a'
+b_chain = 'chain-d'
+
+[[connections.paths]]
+a_port = 'transfer'
+b_port = 'transfer'
+
+
+[[connections]]
+a_chain = 'chain-a'
+b_chain = 'chain-e'
+
+[[connections.paths]]
+a_port = 'transfer'
+b_port = 'transfer'
+
+[[connections]]
+a_chain = 'chain-a'
+b_chain = 'chain-f'
+
+[[connections.paths]]
+a_port = 'transfer'
+b_port = 'transfer'
+
+[[connections]]
+a_chain = 'chain-a'
+b_chain = 'chain-g'
+
+[[connections.paths]]
+a_port = 'transfer'
+b_port = 'transfer'
+
+[[connections]]
+a_chain = 'chain-a'
+b_chain = 'chain-h'
+
+[[connections.paths]]
+a_port = 'transfer'
+b_port = 'transfer'
+
+
+[[connections]]
+a_chain = 'chain-a'
+b_chain = 'chain-i'
+
+[[connections.paths]]
+a_port = 'transfer'
+b_port = 'transfer'
+
+[[connections]]
+a_chain = 'chain-a'
+b_chain = 'chain-j'
+
+[[connections.paths]]
+a_port = 'transfer'
+b_port = 'transfer'
