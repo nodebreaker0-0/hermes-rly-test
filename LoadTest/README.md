@@ -74,25 +74,3 @@ hermes -c config.toml query channel end chain-a transfer channel-8
    ```
 
 
-## Strange operation(send token)
-
-The command below was executed consecutively, and the relayer was stopped.
-
-   ```shell
-    hermes -c config.toml tx raw ft-transfer chain-a chain-b transfer channel-0 99 1000 -n 100 -d atom
-    hermes -c config.toml tx raw ft-transfer chain-a chain-c transfer channel-0 99 1000 -n 100 -d iris
-    hermes -c config.toml tx raw ft-transfer chain-a chain-d transfer channel-0 99 1000 -n 100 -d test
-    hermes -c config.toml tx raw ft-transfer chain-a chain-e transfer channel-0 99 1000 -n 100 -d stake
-    hermes -c config.toml tx raw ft-transfer chain-a chain-f transfer channel-0 99 1000 -n 100 -d stake
-    hermes -c config.toml tx raw ft-transfer chain-a chain-g transfer channel-0 99 1000 -n 100 -d stake
-    hermes -c config.toml tx raw ft-transfer chain-a chain-h transfer channel-0 99 1000 -n 100 -d stake
-    hermes -c config.toml tx raw ft-transfer chain-a chain-i transfer channel-0 99 1000 -n 100 -d stake
-    hermes -c config.toml tx raw ft-transfer chain-a chain-j transfer channel-0 99 1000 -n 100 -d stake
-   ```
-Some packets were not sent, so after querying, manually run relay manually
-   ```shell
-    hermes -c config.toml query packet unreceived-packets chain-a chain-b transfer channel-0
-    hermes -c config.toml tx raw packet-recv chain-a chain-b transfer channel-0
-   ```
-
-
